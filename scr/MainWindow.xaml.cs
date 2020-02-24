@@ -14,12 +14,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using gearXmlViewer.LanguageManager;
+using Microsoft.Win32;
 
 namespace gearXmlViewer
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         private ListView mainView;
@@ -32,7 +30,20 @@ namespace gearXmlViewer
 
         private void LoadText(object sender, RoutedEventArgs e)
         {
-            const string filePath = @"D:\Dev\WelcomeRoom\Assets\Scenes\WelcomeRoom.unity";
+
+            var LoadTextFile = new OpenFileDialog();
+
+            string filePath;
+            if (LoadTextFile.ShowDialog() == true)
+            {
+                filePath = LoadTextFile.FileName;
+            }
+            else
+            {
+                return;
+            }
+
+            // const string filePath = @"C:\Users\ssafi\Documents\Unity\WelcomeRoom_Git\Assets\Scenes\WelcomeRoom.unity";
             StreamReader file;
             try
             {
@@ -43,7 +54,7 @@ namespace gearXmlViewer
                 Console.WriteLine(exception);
                 return;
             }
-            
+
             var translations = new List<Translation>();
             var m_text = new Dictionary<string, string>();
             var m_key = new Dictionary<string, string>();
@@ -72,17 +83,22 @@ namespace gearXmlViewer
             {
                 if (m_key.ContainsKey(objectId))
                 {
-                    translations.Add(new Translation(){Key = m_key[objectId], English = m_text[objectId], German = objectId});
+                    translations.Add(new Translation() { Key = m_key[objectId], English = m_text[objectId], German = objectId });
                 }
             }
-
 
             MainDataGrid.ItemsSource = translations;
 
         }
 
-        private void MainDataGrid_BeginningEdit(object sender, DataGridBeginningEditEventArgs e)
+        private void MainDataGrid_BeginningEdit(object sender, DataGridBeginningEditEventArgs e) { }
+
+        private void Generate(object sender, RoutedEventArgs e)
         {
+            var Cell = new DataGridCell();
+            //Cell.Column = 1;
+            //Cell.ColumnNumber = 1;
+            //TestTextBox.Text = MainDataGrid.;
         }
     }
 }

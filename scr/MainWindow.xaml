@@ -12,7 +12,6 @@
 
         </StatusBar>
         <Grid>
-            <Button Content="Load" Width="142" Height="48" Click="LoadText" Margin="1726,879,0,53" HorizontalAlignment="Left"/>
             <DataGrid x:Name="MainDataGrid" HorizontalAlignment="Left" Height="873" Margin="47,0,0,0" VerticalAlignment="Center" Width="837" Visibility="Visible" BeginningEdit="MainDataGrid_BeginningEdit">
                 <DataGrid.Columns>
                     <!--<DataGridTextColumn Width="Auto" Header ="Key" Binding="{Binding Key}"/>
@@ -21,6 +20,12 @@
                 </DataGrid.Columns>
             </DataGrid>
 
+
+            <Button Content="Load" Click="LoadText" HorizontalAlignment="Left" Margin="1574,789,0,0" VerticalAlignment="Top" Height="50" Width="184" FontSize="20" FontWeight="Bold"/>
+            <Button Content="Generate" Click="Generate" HorizontalAlignment="Left" Margin="1574,877,0,0" VerticalAlignment="Top" Height="50" Width="184" FontSize="20" FontWeight="Bold"/>
+
+
+            <TextBox x:Name="TestTextBox" HorizontalAlignment="Left" Height="65" Margin="1053,154,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="501"/>
 
         </Grid>
 

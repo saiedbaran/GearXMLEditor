@@ -1,0 +1,29 @@
+﻿<Window x:Class="gearXmlViewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:gearXmlViewer"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="1080" Width="1920">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" Height="48" Width="1920" VerticalAlignment="Top"/>
+        <StatusBar Height="36" DockPanel.Dock="Bottom" VerticalAlignment="Bottom">
+
+        </StatusBar>
+        <Grid>
+            <Button Content="Load" Width="142" Height="48" Click="LoadText" Margin="1726,879,0,53" HorizontalAlignment="Left"/>
+            <DataGrid x:Name="MainDataGrid" HorizontalAlignment="Left" Height="873" Margin="47,0,0,0" VerticalAlignment="Center" Width="837" Visibility="Visible" BeginningEdit="MainDataGrid_BeginningEdit">
+                <DataGrid.Columns>
+                    <!--<DataGridTextColumn Width="Auto" Header ="Key" Binding="{Binding Key}"/>
+                    <DataGridTextColumn Width="Auto"  Header ="English" Binding="{Binding English}"/>
+                    <DataGridTextColumn Width="Auto"  Header ="German" Binding="{Binding German}"/>-->
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+        </Grid>
+
+
+    </DockPanel>
+</Window>
